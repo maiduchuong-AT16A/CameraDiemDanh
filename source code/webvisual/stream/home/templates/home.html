@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream</title>
+    <link href="{%static '/css/bootstrap.min.css'%}"></link>
+    <script src="{%static '/js/bootstrap.min,js'%}"></script>
+  </head>
+  <body>
+    <h3>công ty TNHH</h3>
+    <table>
+        <Thread>
+            <tr>
+                <td>ID</td>
+                <td>Phòng ban</td>
+                <td>Chức năng</td>
+            </tr>
+        </Thread>
+        <tbody>
+            {% for Department in department_list%}
+            <tr>
+                <td>{{Department.department_id}}</td>
+                <td>{{Department.name}}</td>
+                <td><a href="/Department/{{Department.department_id}}">Chi tiết</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  </body>
+</html>

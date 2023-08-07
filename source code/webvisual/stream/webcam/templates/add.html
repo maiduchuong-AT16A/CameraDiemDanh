@@ -1,0 +1,123 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Thêm dữ liệu</h3>
+    <form action="/addFaceID" class="form-contact" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="ID">ID</label>
+        <input type="text" name="ID"><br>
+        <label for="Name">Họ và tên</label>
+        <input type="text" name="Name"><br>
+        <button class="btn btn-primary" type="submit">Thêm</button>
+    </form>
+
+
+
+    
+</body>
+</html> {% endcomment %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+    .w3-row-padding img {margin-bottom: 12px}
+    /* Set the width of the sidebar to 120px */
+    .w3-sidebar {width: 120px;background: #222;}
+    /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+    #main {margin-left: 120px}
+    /* Remove margins from "page content" on small screens */
+    @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+    </style>
+  </head>
+<body class="w3-black">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Avatar image in top left corner -->
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">
+    <i class="fa fa-camera w3-xxxlarge" style="color:black;"></i>
+    <p style="font-size: 16px;">Camera 3D</p>
+  </a>
+  <a href="/index" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>Điểm danh</p>
+  </a>
+  <a href="/add" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>Thêm dữ liệu</p>
+  </a>
+  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>Danh sách điểm danh</p>
+  </a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>Liên hệ</p>
+  </a>
+</nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+  </div>
+</div>
+
+
+<!-- Page Content -->
+<div class="w3-padding-large" id="main">
+  <!-- Header/Home -->
+
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">Camera</span> Điểm Danh</h1>
+    <p>Thêm thông tin sinh viên.</p>
+  </header>
+
+  <div class="w3-padding-40 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Điền thông tin sau:</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <form action="/addFaceID" target="_blank" class="form-contact" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="MSV" required name="ID"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Họ và tên" required name="Name"></p>
+      <p style="margin-top:60px">
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+          <i class="fa fa-paper-plane"></i> Thêm dữ liệu khuân mặt
+        </button>
+      </p>
+    </form>
+  <!-- End Contact Section -->
+  </div>
+
+<!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
+<footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <hr style="width:100%" class="w3-opacity">
+  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+ <p class="w3-small">© Copyright by ACTACAD 2021. All Rights Reserved</p>
+ 
+ <a class="w3-button w3-round-xxlarge w3-small w3-light-grey" href="https://www.w3schools.com/spaces" target="_blank">Messenger</a> 
+ <!-- End footer -->
+</footer>
+
+<!-- END PAGE CONTENT -->
+</div>
+
+</body>
+</html>
